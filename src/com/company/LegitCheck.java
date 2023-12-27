@@ -19,6 +19,17 @@ class LegitCheck{
 
     }
 
+    public static boolean rangeCheckRoman(String input) throws Exception {
+        String[]tmp = input.split(" ");
+        try{
+            if (((RomanNumStuff.convertToArabic(tmp[0]) )>0 && RomanNumStuff.convertToArabic(tmp[0])<11)&&(RomanNumStuff.convertToArabic(tmp[2])>0 && RomanNumStuff.convertToArabic(tmp[2])<11))return true;
+            else throw new Exception("Принимаются числа от I до X");
+        }catch (NumberFormatException e){
+            throw new Exception("вряд ли эта ошибка вылетит.");
+        }
+
+    }
+
     public static boolean intOnly(String input) throws Exception {
         String[]tmp = input.split(" ");
         try{
@@ -30,6 +41,16 @@ class LegitCheck{
         }
 
     }
+
+    public static boolean bothSame(String input) throws Exception {
+        String[]tmp = input.split(" ");
+        if ((RomanNumStuff.isRomanNumeral(tmp[0])&&RomanNumStuff.isRomanNumeral(tmp[2]))||(RomanNumStuff.isArabic(tmp[0])&&RomanNumStuff.isArabic(tmp[2])))return true;
+        else throw new Exception("Выберите арабские или римские числа, что -то одно");
+
+
+    }
+
+
 
 
 
