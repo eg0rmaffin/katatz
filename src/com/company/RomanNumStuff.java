@@ -74,7 +74,7 @@ class RomanNumStuff{
 
     public static boolean isArabic(String input) {
         try {
-            Integer.parseInt(input);
+            Double.parseDouble(input);
             return true;
         } catch (NumberFormatException e) {
             return false;
